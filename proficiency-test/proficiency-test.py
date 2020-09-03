@@ -4,7 +4,7 @@ import numpy as np
 pd.options.mode.chained_assignment = None
 
 # Import the database as a Pandas dataframe.
-baseball_data = pd.read_csv('../../Desktop/baseball-data.csv')
+baseball_data = pd.read_csv('./baseball-data.csv')
 pd_baseball = baseball_data.dropna()
 
 batting_avg_max = pd_baseball.loc[pd_baseball['Batting Average'].idxmax()]
@@ -27,8 +27,8 @@ pd_baseball.plot.scatter(x='Batting Average', y='Home Runs per Game', c='Red')
 x,y = pd.Series(pd_baseball['Batting Average']), pd.Series(pd_baseball['Home Runs per Game'])
 corr_co = x.corr(y)
 print("Correlation coefficient between Batting Average and Home Runs per game is " + str("%.2f" % corr_co))
-# plt.show()
-# plt.clf()
+plt.show()
+plt.clf()
 
 # What is the mean number of games played? The median?
 games_played = pd_baseball['Games Played'].to_numpy()
@@ -36,7 +36,7 @@ print('Median Games Played per Player: ' + str(np.median(games_played)))
 
 # Plot a histogram of this data, choosing an appropriate bin size, and observe the distribution
 plt.hist(x, bins = 40)
-# plt.show()
+plt.show()
 
 # Isolate players who play on 1st Base, and those who play outfield.
 first_basemen = pd_baseball.loc[pd_baseball['POS'] == '1B']

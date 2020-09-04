@@ -13,11 +13,11 @@ home_runs_max = pd_baseball.loc[pd_baseball['Home Runs'].idxmax()]
 
 # Which player had the highest batting average? The lowest? Make sure to print out your results.
 print('Highest Batting Average was ' + str(batting_avg_max['Batting Average']))
-print('Highest Batting Average belonged to ' + batting_avg_max['PLAYER'])
+print('Highest Batting Average belonged to' + str(batting_avg_max['PLAYER']).split(',')[1] + " " + str(batting_avg_max['PLAYER']).split(',')[0])
 
 # Which player had the highest # of home-runs per game?
 print('The most Home Runs was ' + str(int(home_runs_max['Home Runs'])))
-print('The most Home Runs belonged to ' + home_runs_max['PLAYER'])
+print('The most Home Runs belonged to' + str(home_runs_max['PLAYER']).split(',')[1] + " " + str(home_runs_max['PLAYER']).split(',')[0])
 
 pd_baseball['Home Runs per Game'] = pd_baseball['Home Runs'] / pd_baseball['Games Played']
 # print(pd_baseball)
@@ -47,7 +47,7 @@ first_and_out = pd.concat(first_and_out)
 big_hitter = first_and_out.loc[first_and_out['Home Runs'].idxmax()]
 
 # To which position does the highest home-run scoring player belong to?
-print(big_hitter['PLAYER'])
+print('Most home runs by either a 1B or OF was:' + str(big_hitter['PLAYER']).split(',')[1] + ' ' + str(big_hitter['PLAYER']).split(',')[0] + " - " + str(big_hitter['POS']))
 
 # Compare the means and medians of batting averages. Can you conclude that one group hits more successfully than the other?
 fb_median_bavg = first_basemen['Batting Average'].to_numpy()

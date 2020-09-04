@@ -8,8 +8,9 @@ baseball_data = pd.read_csv('./baseball-data.csv')
 pd_baseball = baseball_data.dropna()
 
 batting_avg_max = pd_baseball.loc[pd_baseball['Batting Average'].idxmax()]
-
+#print(batting_avg_max)
 home_runs_max = pd_baseball.loc[pd_baseball['Home Runs'].idxmax()]
+# print(home_runs_max)
 
 # Which player had the highest batting average? The lowest? Make sure to print out your results.
 print('Highest Batting Average was ' + str(batting_avg_max['Batting Average']))
@@ -19,6 +20,7 @@ print('Highest Batting Average belonged to' + str(batting_avg_max['PLAYER']).spl
 pd_baseball['Home Runs per Game'] = pd_baseball['Home Runs'] / pd_baseball['Games Played']
 # print(pd_baseball)
 hrpg_max = pd_baseball.loc[pd_baseball['Home Runs per Game'].idxmax()]
+# print(hrpg_max)
 
 print('The most Home Runs per Game was ' + str(hrpg_max['Home Runs per Game']))
 print('The most Home Runs per Game belonged to' + str(hrpg_max['PLAYER']).split(',')[1] + " " + str(hrpg_max['PLAYER']).split(',')[0])
@@ -44,6 +46,7 @@ first_basemen = pd_baseball.loc[pd_baseball['POS'] == '1B']
 outfielders = pd_baseball.loc[pd_baseball['POS'] == 'OF']
 first_and_out = [first_basemen, outfielders]
 first_and_out = pd.concat(first_and_out)
+# print(first_and_out)
 
 big_hitter = first_and_out.loc[first_and_out['Home Runs'].idxmax()]
 

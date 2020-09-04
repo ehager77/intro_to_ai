@@ -16,11 +16,12 @@ print('Highest Batting Average was ' + str(batting_avg_max['Batting Average']))
 print('Highest Batting Average belonged to' + str(batting_avg_max['PLAYER']).split(',')[1] + " " + str(batting_avg_max['PLAYER']).split(',')[0])
 
 # Which player had the highest # of home-runs per game?
-print('The most Home Runs was ' + str(int(home_runs_max['Home Runs'])))
-print('The most Home Runs belonged to' + str(home_runs_max['PLAYER']).split(',')[1] + " " + str(home_runs_max['PLAYER']).split(',')[0])
-
 pd_baseball['Home Runs per Game'] = pd_baseball['Home Runs'] / pd_baseball['Games Played']
 # print(pd_baseball)
+hrpg_max = pd_baseball.loc[pd_baseball['Home Runs per Game'].idxmax()]
+
+print('The most Home Runs per Game was ' + str(hrpg_max['Home Runs per Game']))
+print('The most Home Runs per Game belonged to' + str(hrpg_max['PLAYER']).split(',')[1] + " " + str(hrpg_max['PLAYER']).split(',')[0])
 
 # Do players with higher batting averages tend to score more home runs per game? Create a scatter plot and determine if a relationship exists (make sure to include labels!
 pd_baseball.plot.scatter(x='Batting Average', y='Home Runs per Game', c='Red')

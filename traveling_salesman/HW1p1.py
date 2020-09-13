@@ -1,7 +1,6 @@
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 import pandas as pd
-import numpy as np
 
 loc_file = './locations.txt'
 dist_file = './distances.csv'

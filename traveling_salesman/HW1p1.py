@@ -7,10 +7,8 @@ dist_file = './distances.csv'
 
 def loadData():
     locations = []
-    count = 0
     lf = open(loc_file, 'r') 
     while True: 
-        count += 1
         line = lf.readline() 
         if not line: 
             break

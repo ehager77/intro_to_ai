@@ -528,8 +528,8 @@ class IDASearchEngine:
             #END TRACING
             #Check if current state of node is the goal state using previously defined function to
             # check goal.
-            if #Insert 1 line code here:
-                #node at front of OPEN is a goal...search is completed.
+            # if #Insert 1 line code here:
+            #     #node at front of OPEN is a goal...search is completed.
                 return node
 
              #All states reached by a search node on OPEN have already
